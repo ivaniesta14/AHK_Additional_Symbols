@@ -1,4 +1,4 @@
-﻿;Additional Symbols.ahk Version 0.0.1. Copyright © ivaniesta14, 2018. Distributed under CC-BY-NC 4.0 or later.
+﻿;Additional Symbols.ahk Version 0.0.2. Copyright © ivaniesta14, 2018. Distributed under CC-BY-NC 4.0 or later.
 
 #NoEnv   ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn   ; Enable warnings to assist with detecting common errors.
@@ -556,6 +556,14 @@ SetWorkingDir %A_ScriptDir%   ; Ensures a consistent starting directory.
 ::punc_zwj::
 ::punc_narrow_nbsp::
 
+::punc_tironianet::⁊
+::punc_double_underscore::‗
+::punc_caret::‸
+::punc_threedots::⁖
+::punc_fourdots::⁘
+::punc_fivedots::⁙
+::punc_twodots::⁚
+
 ;################################################                    BRACKETS AND PARENTHESES
 ::bracket_anglequote_double_left::«
 ::bracket_anglequote_double_right::»
@@ -964,7 +972,7 @@ SetWorkingDir %A_ScriptDir%   ; Ensures a consistent starting directory.
 ::cyryu_reversed::ꙕ
 ::cyra_iota::ꙗ
 ::cyrlittleyus_closed::ꙙ
-::cyryus_blended::ꙛ ;J965V6PZWY9ZCN2
+::cyryus_blended::ꙛ
 ::cyrlittleyus_closed_iota::ꙝ
 ::cyryn::ꙟ
 ::cyrtse_reversed::ꙡ
@@ -1243,8 +1251,6 @@ SetWorkingDir %A_ScriptDir%   ; Ensures a consistent starting directory.
 ::latr_turned_tail::ⱹ
 ::lato_lowring::ⱺ
 ::late_turned_smallcapital::ⱻ
-
-;!a::Send ^v{Right}
 
 ;################################################                    MISCELLANEOUS TECHNICAL
 ::misc_paren_rlu::⎛
