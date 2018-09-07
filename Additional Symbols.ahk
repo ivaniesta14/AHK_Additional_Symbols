@@ -1,11 +1,12 @@
-﻿;Additional Symbols.ahk Version 0.0.0. Copyright © ivaniesta14, 2018. Distributed under CC-BY-NC 4.0 or later.
+﻿;Additional Symbols.ahk Version 0.0.1. Copyright © ivaniesta14, 2018. Distributed under CC-BY-NC 4.0 or later.
 
 #NoEnv   ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn   ; Enable warnings to assist with detecting common errors.
 SendMode Input   ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%   ; Ensures a consistent starting directory.
-#SingleInstance force
-#Hotstring O
+
+#SingleInstance force ;Reload and replace current script when opening file instead of adding another instance.
+#Hotstring O ;Hotstrings will consume the character that triggered it (eg. typing "gra " will not have the space after α).
 
 ;################################################                    GREEK ALPHABET
 ::greek_alpha::α
@@ -25,7 +26,7 @@ SetWorkingDir %A_ScriptDir%   ; Ensures a consistent starting directory.
 ::greek_omicron::ο
 ::greek_pi::π
 ::greek_rho::ρ
-::greek_final_sigma::ς
+::greek_sigma_final::ς
 ::greek_sigma::σ
 ::greek_tau::τ
 ::greek_upsilon::υ
@@ -33,31 +34,6 @@ SetWorkingDir %A_ScriptDir%   ; Ensures a consistent starting directory.
 ::greek_chi::χ
 ::greek_psi::ψ
 ::greek_omega::ω
-
-;::greek_capital_alpha::Α
-;::greek_capital_beta::Β
-;::greek_capital_gamma::Γ
-;::greek_capital_delta::Δ
-;::greek_capital_epsilon::Ε
-;::greek_capital_zeta::Ζ
-;::greek_capital_eta::Η
-;::greek_capital_theta::Θ
-;::greek_capital_iota::Ι
-;::greek_capital_kappa::Κ
-;::greek_capital_lambda::Λ
-;::greek_capital_mu::Μ
-;::greek_capital_nu::Ν
-;::greek_capital_xi::Ξ
-;::greek_capital_omicron::Ο
-;::greek_capital_pi::Π
-;::greek_capital_rho::Ρ
-;::greek_capital_sigma::Σ
-;::greek_capital_tau::Τ
-;::greek_capital_upsilon::Υ
-;::greek_capital_phi::Φ
-;::greek_capital_chi::Χ
-;::greek_capital_psi::Ψ
-;::greek_capital_omega::Ω
 
 ::gra::α
 ::grb::β
@@ -84,6 +60,32 @@ SetWorkingDir %A_ScriptDir%   ; Ensures a consistent starting directory.
 ::grx::χ
 ::grc::ψ
 ::grv::ω
+
+::grealpha::α
+::grebeta::β
+::gregamma::γ
+::gredelta::δ
+::greepsilon::ε
+::grezeta::ζ
+::greeta::η
+::gretheta::θ
+::greiota::ι
+::grekappa::κ
+::grelambda::λ
+::gremu::μ
+::grenu::ν
+::grexi::ξ
+::greomicron::ο
+::grepi::π
+::grerho::ρ
+::gresigma_final::ς
+::gresigma::σ
+::gretau::τ
+::greupsilon::υ
+::grephi::φ
+::grechi::χ
+::grepsi::ψ
+::greomega::ω
 
 ;################################################                    MATHEMATICAL SYMBOLS
 ::math_forall::∀
