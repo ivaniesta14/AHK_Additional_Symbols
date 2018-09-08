@@ -1,4 +1,48 @@
-﻿;Additional Symbols.ahk Version 0.0.2. Copyright © ivaniesta14, 2018. Distributed under CC-BY-NC 4.0 or later.
+﻿;Additional Symbols.ahk Version 0.0.3. Copyright © ivaniesta14, 2018. Distributed under CC-BY-NC 4.0 or later.
+
+/*
+
+Hotstrings in this file have a prefix section, a character section and some have also a variant section.
+
+The prefix is a short description of the block the character belongs to, followed by an underscore unless the character is
+a member of an alphabet (eg. greek, cyrillic or latin alphabets) or is a fraction. Katakana's prefix is "kana_".
+
+The (optional) variant section differentiates the character variants (diacritics, left and right brackets...) and is
+always preceded by an underscore.
+If a character has multiple diacritics, they are separated by underscores and listed from the center towards the outside.
+If a character has a diacritic and another modification (reversed, closed...), the modification goes first and then the
+diacritic.
+(Some hotstrings do not follow this structure, especially if the character is similar to another one that has a hotstring)
+(In some cases, the variant section goes before the character section (eg. ‗ "punc_double_underscore"))
+
+Arrows and brackets have their direction (left, right, up, down...) at the end of the variant section.
+Arrow modifiers are ordered in this order: head variations, tail variations, middle variations.
+
+Examples:
+
+ǖ ⇒	latu_diaeresis_macron
+	---=~~~~~~~~~~~~~~~~~
+- Latin alphabet → no underscore
+= Letter u
+~ Diacritics: diaeresis and macron from center to outside
+
+ͽ ⇒	gresigma_lunate_dot_reversed
+	---=====~~~~~~~~~~~~~~~~~~~~
+- Greek alphabet → no underscore
+= Letter sigma
+~ Variations: lunate, dotted, reversed (diacritic and modifications, but ͼ "gresigma_lunate_dot" exists)
+
+⤘ ⇒	arrow_twohead_tail_doublestroke_right
+	------~~~~~~~~~~~~~~~~~~~~~~~~~~=====
+- Arrow → underscore
+= Pointing towards right
+~ Arrow has two heads, two strokes and a tail → twohead_tail_doublestroke
+
+It is possible for some characters to be displayed as a rectangle in some fonts. Make sure to use an Unicode-compatible
+font when browsing this script.
+Certain characters are too wide to be square in some monospace fonts, which may cause weird column alignments.
+
+*/
 
 #NoEnv   ; Recommended for performance and compatibility with future AutoHotkey releases.
 #Warn   ; Enable warnings to assist with detecting common errors.
@@ -8,8 +52,8 @@ SetWorkingDir %A_ScriptDir%   ; Ensures a consistent starting directory.
 #SingleInstance force ;Reload and replace current script when opening file instead of adding another instance.
 #Hotstring O ;Hotstrings will consume the character that triggered it (eg. typing "gra " will not have the space after α).
 
-;################################################                    GREEK ALPHABET
-::greek_alpha::α
+;################################################                    GREEK, COPTIC AND EXTENSIONS
+::greek_alpha::α ;Greek and Coptic
 ::greek_beta::β
 ::greek_gamma::γ
 ::greek_delta::δ
@@ -86,6 +130,188 @@ SetWorkingDir %A_ScriptDir%   ; Ensures a consistent starting directory.
 ::grechi::χ
 ::grepsi::ψ
 ::greomega::ω
+
+::greheta::ͱ
+::gresampi_archaic::ͳ
+::grenumeral::ʹ
+::grenumeral_low::͵
+::gredigamma_pamphylian::ͷ
+::greypogegrammeni::ͺ
+::gresigma_lunate_reversed::ͻ
+::gresigma_lunate_dot::ͼ
+::gresigma_lunate_dot_reversed::ͽ
+::grequestionmark::;
+::gretonos::΄
+::gredialytikatonos::΅
+::greanoteleia::·
+
+::grealpha_tonos::ά
+::greepsilon_tonos::έ
+::greeta_tonos::ή
+::greiota_tonos::ί
+::greupsilon_dialytika_tonos::ΰ
+::greiota_dialytika_tonos::ΐ
+
+::greiota_dialytika::ϊ
+::greupsilon_dialytika::ϋ
+::greomicron_tonos::ό
+::greupsilon_tonos::ύ
+::greomega_tonos::ώ
+::grebeta_cursive::ϐ
+::gretheta_cursive::ϑ
+::greupsilon_hook::ϒ
+::greupsilon_hook_acute::ϓ
+::greupsilon_hook_diaeresis::ϔ
+::grephi_cursive::ϕ
+::grepi_cursive::ϖ
+::grekai::ϗ
+::grekoppa_archaic::ϙ
+::grestigma::ϛ
+::gredigmamma::ϝ
+::grekoppa::ϟ
+::gresampi::ϡ
+
+::copshei::ϣ
+::copfei::ϥ
+::copkhei::ϧ
+::copkori::ϩ
+::copgangia::ϫ
+::copshima::ϭ
+::copdei::ϯ
+::grekappa_cursive::ϰ
+::grerho_cursive::ϱ
+::gresigma_lunate::ϲ
+::greyot::ϳ
+::greepsilon_lunate::ϵ
+::greepsilon_lunate_reversed::϶
+::gresho::ϸ
+::gresan::ϻ
+::grerho_stroke::ϼ
+
+::grealpha_psili::ἀ ;Greek Extended
+::grealpha_dasia::ἁ
+::grealpha_psili_varia::ἂ
+::grealpha_dasia_varia::ἃ
+::grealpha_psili_oxia::ἄ
+::grealpha_dasia_oxia::ἅ
+::grealpha_psili_perispomeni::ἆ
+::grealpha_dasia_perispomeni::ἇ
+::greepsilon_psili::ἐ
+::greepsilon_dasia::ἑ
+::greepsilon_psili_varia::ἒ
+::greepsilon_dasia_varia::ἓ
+::greepsilon_psili_oxia::ἔ
+::greepsilon_dasia_oxia::ἕ
+::greeta_psili::ἠ
+::greeta_dasia::ἡ
+::greeta_psili_varia::ἢ
+::greeta_dasia_varia::ἣ
+::greeta_psili_oxia::ἤ
+::greeta_dasia_oxia::ἥ
+::greeta_psili_perispomeni::ἦ
+::greeta_dasia_perispomeni::ἧ
+::greiota_psili::ἰ
+::greiota_dasia::ἱ
+::greiota_psili_varia::ἲ
+::greiota_dasia_varia::ἳ
+::greiota_psili_oxia::ἴ
+::greiota_dasia_oxia::ἵ
+::greiota_psili_perispomeni::ἶ
+::greiota_dasia_perispomeni::ἷ
+::greomicron_psili::ὀ
+::greomicron_dasia::ὁ
+::greomicron_psili_varia::ὂ
+::greomicron_dasia_varia::ὃ
+::greomicron_psili_oxia::ὄ
+::greomicron_dasia_oxia::ὅ
+::greupsilon_psili::ὐ
+::greupsilon_dasia::ὑ
+::greupsilon_psili_varia::ὒ
+::greupsilon_dasia_varia::ὓ
+::greupsilon_psili_oxia::ὔ
+::greupsilon_dasia_oxia::ὕ
+::greupsilon_psili_perispomeni::ὖ
+::greupsilon_dasia_perispomeni::ὗ
+::greomega_psili::ὠ
+::greomega_dasia::ὡ
+::greomega_psili_varia::ὢ
+::greomega_dasia_varia::ὣ
+::greomega_psili_oxia::ὤ
+::greomega_dasia_oxia::ὥ
+::greomega_psili_perispomeni::ὦ
+::greomega_dasia_perispomeni::ὧ
+
+::grealpha_varia::ὰ
+::grealpha_oxia::ά
+::greepsilon_varia::ὲ
+::greepsilon_oxia::έ
+::greeta_varia::ὴ
+::greeta_oxia::ή
+::greiota_varia::ὶ
+::greiota_oxia::ί
+::greomicron_varia::ὸ
+::greomicron_oxia::ό
+::greupsilon_varia::ὺ
+::greupsilon_oxia::ύ
+::greomega_varia::ὼ
+::greomega_oxia::ώ
+
+::grealpha_psili_ypogegrammeni::ᾀ
+::grealpha_dasia_ypogegrammeni::ᾁ
+::grealpha_psili_varia_ypogegrammeni::ᾂ
+::grealpha_dasia_varia_ypogegrammeni::ᾃ
+::grealpha_psili_oxia_ypogegrammeni::ᾄ
+::grealpha_dasia_oxia_ypogegrammeni::ᾅ
+::grealpha_psili_perispomeni_ypogegrammeni::ᾆ
+::grealpha_dasia_perispomeni_ypogegrammeni::ᾇ
+::grealpha_psili_ypogegrammeni::ᾐ
+::grealpha_dasia_ypogegrammeni::ᾑ
+::grealpha_psili_varia_ypogegrammeni::ᾒ
+::grealpha_dasia_varia_ypogegrammeni::ᾓ
+::grealpha_psili_oxia_ypogegrammeni::ᾔ
+::grealpha_dasia_oxia_ypogegrammeni::ᾕ
+::grealpha_psili_perispomeni_ypogegrammeni::ᾖ
+::grealpha_dasia_perispomeni_ypogegrammeni::ᾗ
+::grealpha_psili_ypogegrammeni::ᾠ
+::grealpha_dasia_ypogegrammeni::ᾡ
+::grealpha_psili_varia_ypogegrammeni::ᾢ
+::grealpha_dasia_varia_ypogegrammeni::ᾣ
+::grealpha_psili_oxia_ypogegrammeni::ᾤ
+::grealpha_dasia_oxia_ypogegrammeni::ᾥ
+::grealpha_psili_perispomeni_ypogegrammeni::ᾦ
+::grealpha_dasia_perispomeni_ypogegrammeni::ᾧ
+
+::grealpha_vrachy::ᾰ
+::grealpha_macron::ᾱ
+::grealpha_varia_ypogegrammeni::ᾲ
+::grealpha_ypogegrammeni::ᾳ
+::grealpha_oxia_ypogegrammeni::ᾴ
+::grealpha_perispomeni::ᾶ
+::grealpha_perispomeni_ypogegrammeni::ᾷ
+::greeta_varia_ypogegrammeni::ῂ
+::greeta_ypogegrammeni::ῃ
+::greeta_oxia_ypogegrammeni::ῄ
+::greeta_perispomeni::ῆ
+::greeta_perispomeni_ypogegrammeni::ῇ
+::greiota_vrachy::ῐ
+::greiota_macron::ῑ
+::greiota_dialytika_varia::ῒ
+::greiota_dialytika_oxia::ΐ
+::greiota_perispomeni::ῖ
+::greiota_perispomeni_ypogegrammeni::ῗ
+::greupsilon_vrachy::ῠ
+::greupsilon_macron::ῡ
+::greupsilon_dialytika_varia::ῢ
+::greupsilon_dialytika_oxia::ΰ
+::grerho_psili::ῤ
+::grerho_dasia::ῥ
+::greupsilon_perispomeni::ῦ
+::greupsilon_perispomeni_ypogegrammeni::ῧ
+::greomega_varia_ypogegrammeni::ῲ
+::greomega_ypogegrammeni::ῳ
+::greomega_oxia_ypogegrammeni::ῴ
+::greomega_perispomeni::ῶ
+::greomega_perispomeni_ypogegrammeni::ῷ
 
 ;################################################                    MATHEMATICAL SYMBOLS
 ::math_forall::∀
