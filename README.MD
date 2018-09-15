@@ -14,6 +14,8 @@ An AutoHotkey script containing over a thousand hotstrings to provide an easy wa
 - Latin Extended-A
 - Latin Extended-B
 - Latin Extended-C
+- Latin Extended-D
+- Latin Extended-E
 - Greek and Coptic
 - Greek Extended
 - Cyrillic
@@ -24,6 +26,7 @@ An AutoHotkey script containing over a thousand hotstrings to provide an easy wa
 - (Part of) Enclosed Alphanumerics
 - (Minor part of) Miscellaneous Symbols
 - Katakana
+- Hiragana
 - General Punctuation
 - (Minor part of) Supplemental Punctuation
 - Subscripts and Superscripts
