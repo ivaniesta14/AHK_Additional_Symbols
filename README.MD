@@ -5,7 +5,7 @@ An AutoHotkey script containing over a thousand hotstrings to provide an easy wa
 ## Usage
 
 1. Install [AutoHotkey](https://autohotkey.com "AutoHotkey Homepage")
-2. Clone or download this repository
+2. Clone this repository or download "Additional Symbols.ahk"
 3. Run "Additional Symbols.ahk"
 
 ## Unicode blocks covered
@@ -22,6 +22,7 @@ An AutoHotkey script containing over a thousand hotstrings to provide an easy wa
 - Cyrillic Supplement
 - Cyrillic Extended-B
 - Mathematical Symbols
+- Supplemental Mathematical Symbols
 - (Part of) Miscellaneous Technical
 - (Part of) Enclosed Alphanumerics
 - (Minor part of) Miscellaneous Symbols
@@ -31,10 +32,12 @@ An AutoHotkey script containing over a thousand hotstrings to provide an easy wa
 - (Minor part of) Supplemental Punctuation
 - Subscripts and Superscripts
 - (Minor part of) Letterlike Symbols
-- Number formts
+- Number Forms
 - Arrows
 - (Minor part of) Supplemental Arrows-A
 - (Part of) Supplemental Arrows-B
+- (Part of) Miscellaneous Symbols and Arrows
+- Alchemical Symbols
 
 ## Notes
 
